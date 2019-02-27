@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<body>
+    <br>
+    <div class = "container">
+        <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <br>
+            <input class="btn btn-dark" type="submit" value="제출하기">
+        </form>
+        <!--
+        <form action = "{% url 'create' %}">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">제목</label>
+                <input type="text" class="form-control" id="newTitle" name = "title" placeholder="제목을 입력하세요.">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">본문</label>
+                <textarea class="form-control" id="newBody" name = "body" rows="10"></textarea>
+            </div>
+            <input class="btn btn-dark" type="submit" value="제출하기">
+        </form>
+        -->
+    </div>
+</body>
+{% endblock %}
